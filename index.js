@@ -10,7 +10,20 @@ server.get("/:model/:year", (req, res) => {
   const result = {
     model,
     year,
-    value: `$${value}`,
+    value,
+  };
+  res.send(result);
+});
+
+server.get("/", (req, res) => {
+  const model = req.query.model;
+  const year = parseInt(req.query.year);
+
+  const value = getCarValue(model, year);
+  const result = {
+    model,
+    year,
+    value,
   };
   res.send(result);
 });

@@ -1,5 +1,5 @@
 export const getCarValue = (model, year) => {
-  if (typeof model !== "string" || !model.trim()) {
+  if (typeof model !== "string" || !model.trim() || !isNaN(model)) {
     return "error:please enter a model name";
   }
 
