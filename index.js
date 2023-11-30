@@ -1,8 +1,11 @@
 import express from "express";
 import env from "dotenv";
+import cors from "cors";
 import { getCarValue } from "./carValue.js";
 import { getSimilarCars } from "./similarCarsGetter.js";
 const server = express();
+
+server.use(cors());
 
 env.config();
 
