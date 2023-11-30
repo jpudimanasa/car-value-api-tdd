@@ -1,6 +1,7 @@
 import express from "express";
 import env from "dotenv";
 import { getCarValue } from "./carValue.js";
+import { getSimilarCars } from "./similarCarsGetter.js";
 const server = express();
 
 env.config();
@@ -33,7 +34,8 @@ server.get("/", (req, res) => {
 
 server.get("/similar-cars", (req, res) => {
   const make = req.query.make;
-  res.send(make);
+  const similarCars = getSimilarCars(make);
+  res.send(similarCars);
 });
 
 const port = process.env.PORT || 8000;
