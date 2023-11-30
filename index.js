@@ -41,5 +41,5 @@ server.get("/similar-cars", (req, res) => {
 const port = process.env.PORT || 8000;
 
 server.listen(port, () => {
-  console.log("sever started and listening on port 8000");
+  console.log(`sever started and listening on port ${port}`);
 });
