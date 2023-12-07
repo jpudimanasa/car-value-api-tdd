@@ -4,10 +4,13 @@ import cors from "cors";
 import { getCarValue } from "./carValue.js";
 import { getSimilarCars } from "./similarCarsGetter.js";
 const server = express();
+import { initDB } from "./database.js";
 
 server.use(cors());
 
 env.config();
+
+initDB();
 
 server.get("/:model/:year", (req, res) => {
   const model = req.params.model;
