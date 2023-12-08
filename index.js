@@ -38,9 +38,9 @@ server.get("/", (req, res) => {
   res.send(result);
 });
 
-server.get("/similar-cars", (req, res) => {
+server.get("/similar-cars", async (req, res) => {
   const make = req.query.make;
-  const similarCars = getSimilarCars(make);
+  const similarCars = await getSimilarCars(make);
   res.send(similarCars);
 });
 

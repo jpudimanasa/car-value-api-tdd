@@ -1,4 +1,4 @@
-import { car } from "./models/cars";
+import { car } from "./models/cars.js";
 export async function getSimilarCars(tag) {
   // const carsArray = [
   //   { model: "Audi", path: "audi one .jpeg" },
